@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C130C4C293DB8730017E594 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C130C4B293DB8730017E594 /* Member.swift */; };
+		1C130C4E293DD1560017E594 /* MemberListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C130C4D293DD1560017E594 /* MemberListManager.swift */; };
+		1C130C50293DDEB00017E594 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C130C4F293DDEB00017E594 /* MyTableViewCell.swift */; };
+		1C130C52293DF03D0017E594 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C130C51293DF03D0017E594 /* DetailViewController.swift */; };
+		1C130C54293DF06B0017E594 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C130C53293DF06B0017E594 /* DetailView.swift */; };
 		1CF1F2C32935F2EE00E1AE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1F2C22935F2EE00E1AE39 /* AppDelegate.swift */; };
 		1CF1F2C52935F2EE00E1AE39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1F2C42935F2EE00E1AE39 /* SceneDelegate.swift */; };
 		1CF1F2C72935F2EE00E1AE39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1F2C62935F2EE00E1AE39 /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C130C4B293DB8730017E594 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		1C130C4D293DD1560017E594 /* MemberListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListManager.swift; sourceTree = "<group>"; };
+		1C130C4F293DDEB00017E594 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		1C130C51293DF03D0017E594 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1C130C53293DF06B0017E594 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1CF1F2BF2935F2EE00E1AE39 /* MemberList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemberList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1F2C22935F2EE00E1AE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CF1F2C42935F2EE00E1AE39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				1CF1F2C62935F2EE00E1AE39 /* ViewController.swift */,
+				1C130C51293DF03D0017E594 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -80,6 +91,8 @@
 		1CF1F2D72935F37600E1AE39 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1C130C4F293DDEB00017E594 /* MyTableViewCell.swift */,
+				1C130C53293DF06B0017E594 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -87,6 +100,8 @@
 		1CF1F2D82935F37C00E1AE39 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1C130C4B293DB8730017E594 /* Member.swift */,
+				1C130C4D293DD1560017E594 /* MemberListManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,9 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C130C4E293DD1560017E594 /* MemberListManager.swift in Sources */,
+				1C130C54293DF06B0017E594 /* DetailView.swift in Sources */,
 				1CF1F2C72935F2EE00E1AE39 /* ViewController.swift in Sources */,
 				1CF1F2C32935F2EE00E1AE39 /* AppDelegate.swift in Sources */,
 				1CF1F2C52935F2EE00E1AE39 /* SceneDelegate.swift in Sources */,
+				1C130C4C293DB8730017E594 /* Member.swift in Sources */,
+				1C130C50293DDEB00017E594 /* MyTableViewCell.swift in Sources */,
+				1C130C52293DF03D0017E594 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
