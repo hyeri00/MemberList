@@ -113,6 +113,7 @@ class DetailView: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
+    
     lazy var nameStackView: UIStackView = {
         let stview = UIStackView(arrangedSubviews: [nameLabel, nameTextField])
         stview.spacing = 5
@@ -244,6 +245,7 @@ class DetailView: UIView {
         super.init(frame: frame)
         
         backgroundColor = .white
+        
         setupStackView()
         setupNotification()
         setupMemberIdTextField()
@@ -261,11 +263,12 @@ class DetailView: UIView {
     
     func setupNotification() {
         // Notification의 등록 ⭐️
-        // (OS차원에서 어떤 노티피케이션이 발생하는지 이미 정해져 있음)
+        // (OS 차원에서 어떤 노티피케이션이 발생하는지 이미 정해져 있음)
         NotificationCenter.default.addObserver(self, selector: #selector(moveUpAction), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(moveDownAction), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    // 대리자 설정
     func setupMemberIdTextField() {
         memberIdTextField.delegate = self
     }

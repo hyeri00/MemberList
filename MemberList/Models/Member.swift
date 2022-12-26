@@ -7,6 +7,12 @@
 
 import UIKit
 
+// AnyObject는 class에서만 채택을 할 수 있게 해줌
+protocol MemberDelegate: AnyObject {
+    func addNewMember(_ member: Member)
+    func update(index: Int, _ member: Member)
+}
+
 // 데이터 묶음은 struct
 struct Member {
     
@@ -31,6 +37,7 @@ struct Member {
     // 생성자 구현
     init(name: String?, age: Int?, phone: String?, address: String?) {
         
+        // 0일 때는 0, 0이 아닐 때는 타입저장속성의 절대적 값으로 세팅 (자동 순번)
         self.memberId = Member.memberNumbers
         
         // 나머지 저장 속성은 외부에서 세팅

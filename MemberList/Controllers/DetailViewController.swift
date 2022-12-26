@@ -15,8 +15,8 @@ final class DetailViewController: UIViewController {
     // 전 화면에서 Member 데이터를 전달 받기 위한 변수
     var member: Member?
     
-    // 대리자설정을 위한 변수(델리게이트)
-//    weak var delegate: MemberDelegate?
+    // 대리자 설정을 위한 변수 (델리게이트)
+    weak var delegate: MemberDelegate?
     
     override func loadView() {
         view = detailView
@@ -84,15 +84,15 @@ final class DetailViewController: UIViewController {
             newMember.memberImage = detailView.mainImageView.image
             
             // 1) 델리게이트 방식이 아닌 구현 ⭐️
-            let index = navigationController!.viewControllers.count - 2
+//            let index = navigationController!.viewControllers.count - 2
             // 전 화면에 접근하기 위함
-            let vc = navigationController?.viewControllers[index] as! ViewController
+//            let vc = navigationController?.viewControllers[index] as! ViewController
             // 전 화면의 모델에 접근해서 멤버를 추가
-            vc.memberListManager.makeNewMember(newMember)
+//            vc.memberListManager.makeNewMember(newMember)
             
             
             // 2) 델리게이트 방식으로 구현 ⭐️
-//            delegate?.addNewMember(newMember)
+            delegate?.addNewMember(newMember)
             
             
         // [2] 멤버가 있다면 (멤버의 내용을 업데이트 하기 위한 설정)
@@ -110,16 +110,16 @@ final class DetailViewController: UIViewController {
             detailView.member = member
             
             // 1) 델리게이트 방식이 아닌 구현 ⭐️
-            let index = navigationController!.viewControllers.count - 2 // count 하면 2가 나오니까 -2를 하여 0을 만들어줌. ViewController에 접근 해야 함.
+//            let index = navigationController!.viewControllers.count - 2 // count 하면 2가 나오니까 -2를 하여 0을 만들어줌. ViewController에 접근 해야 함.
             // 전 화면에 접근하기 위함
 //            navigationController?.viewControllers[0]
-            let vc = navigationController?.viewControllers[index] as! ViewController
+//            let vc = navigationController?.viewControllers[index] as! ViewController
             // 전 화면의 모델에 접근해서 멤버를 업데이트
-            vc.memberListManager.updateMemberInfo(index: memberId, member!)
+//            vc.memberListManager.updateMemberInfo(index: memberId, member!)
             
             
-            // 델리게이트 방식으로 구현 ⭐️
-//            delegate?.update(index: memberId, member!)
+            // 2) 델리게이트 방식으로 구현 ⭐️
+            delegate?.update(index: memberId, member!)
         }
         
         // (일처리를 다한 후에) 전 화면으로 돌아가기
@@ -137,7 +137,7 @@ extension DetailViewController: PHPickerViewControllerDelegate {
     
     // 사진이 선택이 된 후에 호출되는 메서드
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        // 피커뷰 discuss
+        // 피커뷰 dismiss
         picker.dismiss(animated: true)
         
         let itemProvider = results.first?.itemProvider

@@ -37,13 +37,13 @@ final class ViewController: UIViewController {
     }
     
     // 델리게이트가 아닌 방식으로 구현할 때는 화면 리프레시
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // 주소 등 업데이트 시 테이블뷰에도 업데이트가 된다.
-        // 뷰가 다시 나타날 때, 테이블뷰를 리로드
-        tableView.reloadData()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        // 주소 등 업데이트 시 테이블뷰에도 업데이트가 된다.
+//        // 뷰가 다시 나타날 때, 테이블뷰를 리로드
+//        tableView.reloadData()
+//    }
     
     func setupNaviBar() {
         title = "회원 목록"
@@ -144,7 +144,7 @@ extension ViewController: UITableViewDelegate {
         let detailVC = DetailViewController()
         
         // 다음 화면의 대리자 설정 (다음 화면의 대리자는 지금 현재의 뷰컨트롤러)
-//        detailVC.delegate = self
+        detailVC.delegate = self
         
         // 다음 화면에 멤버를 전달
         let currentMember = memberListManager.getMembersList()[indexPath.row]
@@ -154,3 +154,18 @@ extension ViewController: UITableViewDelegate {
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
+
+// MARK: - MemberDelegate
+
+extension ViewController: MemberDelegate {
+    func addNewMember(_ member: Member) {
+        memberListManager.makeNewMember(member)
+        tableView.reloadData()
+    }
+    
+    func update(index: Int, _ member: Member) {
+        memberListManager.updateMemberInfo(index: index, member)
+        tableView.reloadData()
+    }
+}
+
